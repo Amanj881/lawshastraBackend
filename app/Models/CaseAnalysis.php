@@ -9,4 +9,5 @@ class CaseAnalysis extends Model
 {
     use HasFactory;
     protected $table = 'case_analysis';
+    
 }
