@@ -27,7 +27,7 @@ Route::get('/clear',function(){
         $run = Artisan::call('cache:clear');
         $run = Artisan::call('config:cache');
         return 'FINISHED'; 
-})
+    });
 Route::get('/blogs',[BlogController::class,'blogs'])->name('blogs');
 Route::get('/opportunities',[OpportunityController::class,'Opportunities'])->name('opportunities');
 Route::get('/notes',[MaterialController::class,'study_materials'])->name('notes');
