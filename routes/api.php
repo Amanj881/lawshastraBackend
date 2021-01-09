@@ -21,6 +21,13 @@ use App\Http\Controllers\CaseAnalysisController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/clear',function(){
+	$run = Artisan::call('config:clear');
+        $run = Artisan::call('cache:clear');
+        $run = Artisan::call('config:cache');
+        return 'FINISHED'; 
+})
 Route::get('/blogs',[BlogController::class,'blogs'])->name('blogs');
 Route::get('/opportunities',[OpportunityController::class,'Opportunities'])->name('opportunities');
 Route::get('/notes',[MaterialController::class,'study_materials'])->name('notes');
